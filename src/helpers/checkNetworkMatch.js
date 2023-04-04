@@ -3,7 +3,7 @@ import { bnbContractDetails, contractDetails } from "../constants";
 const checkNetworkMatch = async (payload) => {
   var t = await window.web3.eth.net.getId();
   var e = await window.web3.eth.getChainId();
-  if (10 === t && 10 === e) {
+  if (420 === t && 420 === e) {
     window.contract = new window.web3.eth.Contract(
       bnbContractDetails.abi,
       bnbContractDetails.address
@@ -12,7 +12,7 @@ const checkNetworkMatch = async (payload) => {
     payload.onSuccess();
     return;
   } else {
-    if (42161 !== t || 42161 !== e) {
+    if (421613 !== t || 421613 !== e) {
       payload?.onFailure && payload.onFailure("UNSUPPORTED_NETWORK");
       return;
     }

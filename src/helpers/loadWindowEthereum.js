@@ -6,7 +6,7 @@ const loadWindowEthereum = async ({
   setAccount,
   onNetworkFailure,
 }) => {
-  if (window.isBnb === !42161 || window.ethereum) {
+  if (window.isBnb === !421613 || window.ethereum) {
     window.web3 = new Web3(window.ethereum);
     await window.ethereum.enable();
   } else {
